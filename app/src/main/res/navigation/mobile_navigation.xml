@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_todos">
+
+    <fragment
+        android:id="@+id/nav_todos"
+        android:name="mvvm.roomdatabase.aplicacaoconvidados.view.AllGuestsFragment"
+        android:label="@string/todos"
+        tools:layout="@layout/fragment_all_guests" />
+
+    <fragment
+        android:id="@+id/nav_presentes"
+        android:name="mvvm.roomdatabase.aplicacaoconvidados.view.PresentsFragment"
+        android:label="@string/presentes"
+        tools:layout="@layout/fragment_presents" />
+
+    <fragment
+        android:id="@+id/nav_ausentes"
+        android:name="mvvm.roomdatabase.aplicacaoconvidados.view.AbsentsFragment"
+        android:label="@string/ausentes"
+        tools:layout="@layout/fragment_absents" />
+</navigation>
