@@ -14,7 +14,7 @@ class GuestFormViewModel(application: Application) : AndroidViewModel(applicatio
 
     @SuppressLint("StaticFieldLeak")
     private val mContext = application.applicationContext
-    private val mGuestRepository: GuestRepository = GuestRepository.getInstance(mContext)
+    private val mGuestRepository = GuestRepository.getInstance(mContext)
 
     private var mSaveGuest = MutableLiveData<Boolean>()
     val saveGuest : LiveData<Boolean> = mSaveGuest
