@@ -37,15 +37,10 @@ class AbsentsFragment : Fragment() {
     ): View {
       mGuestsViewModel = ViewModelProvider(this)[GuestsViewModel::class.java]
         _binding = FragmentAbsentsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        //Recyclerview
-        // 1 - Create one Recyclerview
-        val allGuestsRecyclerView = root.findViewById<RecyclerView>(R.id.recyclerView_absents)
-        // 2 - Define one Layout
-        allGuestsRecyclerView.layoutManager = LinearLayoutManager(context)
-        // 3 - Define one Adapter
-        allGuestsRecyclerView.adapter = mAdapter
+        binding.recyclerViewAbsents.layoutManager = LinearLayoutManager(context)
+
+        binding.recyclerViewAbsents.adapter = mAdapter
 
         mListener = object : GuestListener{
             override fun onClick(id: Int) {
@@ -70,7 +65,7 @@ class AbsentsFragment : Fragment() {
         observer()
 
 
-        return root
+        return binding.root
     }
 
     override fun onResume() {

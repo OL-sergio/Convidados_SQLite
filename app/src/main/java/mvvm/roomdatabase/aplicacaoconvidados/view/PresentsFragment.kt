@@ -37,15 +37,10 @@ class PresentsFragment : Fragment() {
     ): View {
         mGuestsViewModel = ViewModelProvider(this)[GuestsViewModel::class.java]
         _binding = FragmentPresentsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        //Recyclerview
-        // 1 - Create one Recyclerview
-        val allGuestsRecyclerView = root.findViewById<RecyclerView>(R.id.recyclerView_presents)
-        // 2 - Define one Layout
-        allGuestsRecyclerView.layoutManager = LinearLayoutManager(context)
-        // 3 - Define one Adapter
-        allGuestsRecyclerView.adapter = mAdapter
+        binding.recyclerViewPresents.layoutManager = LinearLayoutManager(context)
+
+        binding.recyclerViewPresents.adapter = mAdapter
 
         mListener = object : GuestListener{
             override fun onClick(id: Int) {
@@ -69,7 +64,7 @@ class PresentsFragment : Fragment() {
         mAdapter.attachListener(mListener!!)
         observer()
 
-        return root
+        return binding.root
     }
 
     override fun onResume() {
